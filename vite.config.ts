@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react-swc'
 import { resolve } from 'node:path'
 import AutoImport from 'unplugin-auto-import/vite'
 
-const base = process.env.BASE_PATH || '/'
+const base = process.env.BASE_PATH || '/2025event/'
 const isPreview = process.env.IS_PREVIEW ? true : false
 
 // https://vite.dev/config/
@@ -17,7 +17,7 @@ export default defineConfig({
     AutoImport({
       imports: [
         {
-          'react': [
+          react: [
             'React',
             'useState',
             'useEffect',
@@ -70,7 +70,7 @@ export default defineConfig({
   base,
   build: {
     sourcemap: true,
-    outDir: 'docs',   // ★ ここを out -> docs に変更
+    outDir: 'docs',
   },
   resolve: {
     alias: {
